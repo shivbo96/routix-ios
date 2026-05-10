@@ -5,7 +5,7 @@ public class Routix {
     public static let shared = Routix()
     private init() {}
 
-    private let version = "1.0.0"
+    private let version = "1.0.4"
     private var apiKey: String?
     private let baseUrl: String = "https://api.routix.link"
 
