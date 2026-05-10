@@ -112,7 +112,7 @@ public class Routix {
                 let match = try JSONDecoder().decode(RoutixMatch.self, from: data)
                 if match.success {
                     UserDefaults.standard.set(true, forKey: "routix_resolved")
-                    onAttribution?(match)
+                    self.onAttribution?(match)
                 }
                 completion(match)
             } catch {
