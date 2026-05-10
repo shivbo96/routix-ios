@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RoutixSDK'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Official Routix SDK for iOS. Attribute deep links and track conversion events.'
 
   s.description      = <<-DESC
