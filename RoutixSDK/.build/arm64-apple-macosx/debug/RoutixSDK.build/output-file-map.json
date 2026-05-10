@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/master.swiftdeps"
+  },
+  "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/Routix.swift": {
+    "dependencies": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix.d",
+    "object": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix.swift.o",
+    "swiftmodule": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix~partial.swiftmodule",
+    "swift-dependencies": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix.swiftdeps",
+    "diagnostics": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix.dia"
+  },
+  "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/RoutixMatch.swift": {
+    "dependencies": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch.d",
+    "object": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch.swift.o",
+    "swiftmodule": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch~partial.swiftmodule",
+    "swift-dependencies": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch.swiftdeps",
+    "diagnostics": "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch.dia"
+  }
+}

@@ -1,0 +1,47 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "RoutixSDK-arm64-apple-macosx26.0-debug.module": ["<RoutixSDK-arm64-apple-macosx26.0-debug.module>"]
+  "main": ["<RoutixSDK-arm64-apple-macosx26.0-debug.module>"]
+  "test": ["<RoutixSDK-arm64-apple-macosx26.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/Routix.swift","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/RoutixMatch.swift"]
+    outputs: ["/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/sources"]
+    description: "Write auxiliary file /Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/sources"
+
+  "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<RoutixSDK-arm64-apple-macosx26.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix.swift.o","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch.swift.o","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/Modules/RoutixSDK.swiftmodule"]
+    outputs: ["<RoutixSDK-arm64-apple-macosx26.0-debug.module>"]
+
+  "C.RoutixSDK-arm64-apple-macosx26.0-debug.module":
+    tool: shell
+    inputs: ["/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/Routix.swift","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/RoutixMatch.swift","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/sources"]
+    outputs: ["/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/Routix.swift.o","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/RoutixMatch.swift.o","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/Modules/RoutixSDK.swiftmodule"]
+    description: "Compiling Swift Module 'RoutixSDK' (2 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","RoutixSDK","-emit-dependencies","-emit-module","-emit-module-path","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/Modules/RoutixSDK.swiftmodule","-output-file-map","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/sources","-I","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/include/RoutixSDK-Swift.h","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Sources/RoutixSDK/","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Package.swift","/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

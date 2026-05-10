@@ -1,0 +1,3 @@
+module RoutixSDK {
+    header "/Users/shivam-mishra/CascadeProjects/ecliptic-crab/sdks/routix-ios/RoutixSDK/.build/arm64-apple-macosx/debug/RoutixSDK.build/include/RoutixSDK-Swift.h"
+}
