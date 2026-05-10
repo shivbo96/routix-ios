@@ -16,7 +16,7 @@ pod 'RoutixSDK', '~> 1.0.0'
 ```
 
 ### Swift Package Manager
-Add `https://github.com/shivbo96/flowlnk` as a package dependency.
+Add `https://github.com/shivbo96/routix-ios` as a package dependency.
 
 ---
 
