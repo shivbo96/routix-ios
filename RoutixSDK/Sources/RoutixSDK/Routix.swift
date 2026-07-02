@@ -5,7 +5,7 @@ public class Routix {
     public static let shared = Routix()
     private init() {}
 
-    private let version = "1.0.4"
+    private let version = "1.0.5"
     private var apiKey: String?
     private let baseUrl: String = "https://api.routix.link"
 
@@ -149,7 +149,14 @@ public class Routix {
     /// Track a workspace-level custom event independent of any link.
     public func trackCustomEvent(eventType: String, metadata: [String: Any]? = nil) {
         guard apiKey != nil else { return }
+        let deviceInfo = getDeviceInfo()
         var payload: [String: Any] = metadata ?? [:]
+        if payload["anonymous_device_id"] == nil && payload["anonymousDeviceId"] == nil {
+            payload["anonymous_device_id"] = deviceInfo["anonymous_device_id"]
+        }
+        if payload["device_info"] == nil && payload["deviceInfo"] == nil {
+            payload["device_info"] = deviceInfo
+        }
         payload["event_type"] = eventType
         payload["sdk_v"] = "ios-\(version)"
         payload["timestamp"] = ISO8601DateFormatter().string(from: Date())
@@ -157,7 +164,14 @@ public class Routix {
     }
 
     private func trackEvent(code: String, type: String, metadata: [String: Any]? = nil) {
+        let deviceInfo = getDeviceInfo()
         var payload: [String: Any] = metadata ?? [:]
+        if payload["anonymous_device_id"] == nil && payload["anonymousDeviceId"] == nil {
+            payload["anonymous_device_id"] = deviceInfo["anonymous_device_id"]
+        }
+        if payload["device_info"] == nil && payload["deviceInfo"] == nil {
+            payload["device_info"] = deviceInfo
+        }
         payload["sdk_v"] = "ios-\(version)"
         payload["timestamp"] = ISO8601DateFormatter().string(from: Date())
         makePostRequest(endpoint: "/api/v1/links/\(code)/\(type)", payload: payload) { _ in }
